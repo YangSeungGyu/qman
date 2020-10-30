@@ -1,4 +1,4 @@
-package com.sample.www.api.sample;
+package com.qman.www.api.sample;
 
 
 import java.io.BufferedReader;

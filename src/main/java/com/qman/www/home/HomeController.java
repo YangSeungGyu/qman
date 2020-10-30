@@ -1,4 +1,4 @@
-package com.sample.www.home;
+package com.qman.www.home;
 
 import java.util.Locale;
 

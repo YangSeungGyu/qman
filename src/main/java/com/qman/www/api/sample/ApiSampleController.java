@@ -1,4 +1,4 @@
-package com.sample.www.api.sample;
+package com.qman.www.api.sample;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

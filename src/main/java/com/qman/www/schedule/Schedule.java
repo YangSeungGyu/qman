@@ -1,4 +1,4 @@
-package com.sample.www.schedule;
+package com.qman.www.schedule;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

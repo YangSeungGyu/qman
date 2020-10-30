@@ -1,4 +1,4 @@
-package com.sample.www.common.error;
+package com.qman.www.common.error;
 
 
 import javax.servlet.http.HttpServletResponse;

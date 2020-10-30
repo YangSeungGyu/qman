@@ -1,4 +1,4 @@
-package com.sample.www.common.tag;
+package com.qman.www.common.tag;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;

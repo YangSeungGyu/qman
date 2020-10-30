@@ -1,4 +1,4 @@
-package com.sample.www.sample;
+package com.qman.www.sample;
 
 import java.text.DateFormat;
 import java.text.MessageFormat;

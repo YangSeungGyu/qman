@@ -1,4 +1,4 @@
-package com.sample.www.common.aop;
+package com.qman.www.common.aop;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

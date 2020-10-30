@@ -1,4 +1,4 @@
-package com.sample.www.common.aop;
+package com.qman.www.common.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 public class LogAOP {
 	private static final Logger logger = LoggerFactory.getLogger(LogAOP.class);
 
-	@Around("execution(* com.sample.www..*Controller.*(..)) || execution(* com.sample.www..*Service.*(..)) || execution(* com.sample.www..*DAO.*(..))")
+	@Around("execution(* com.qman.www..*Controller.*(..)) || execution(* com.qman.www..*Service.*(..)) || execution(* com.qman.www..*DAO.*(..))")
 	public Object doLoggingAround(final ProceedingJoinPoint pjp) throws Throwable {
 		Object retVal = null;
 		final Class<? extends Object> targetClass = pjp.getTarget().getClass();

@@ -1,4 +1,4 @@
-package com.sample.www.sample;
+package com.qman.www.sample;
 
 public class SampleVO {
 	private Integer testVo01;

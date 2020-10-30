@@ -1,4 +1,4 @@
-package com.sample.www.common.interceptor;
+package com.qman.www.common.interceptor;
 
 
 import java.io.IOException;
@@ -12,7 +12,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.sample.www.common.util.CommonUtil;
+import com.qman.www.common.util.CommonUtil;
 
 
 public class Interceptor extends HandlerInterceptorAdapter {
