@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.qman.www">	
+	
+	 <insert id="writeAction" parameterType="com.qman.www.board.BoardVO" >
+	INSERT INTO Q_BOARD
+	  (
+	    NO
+	    ,TITLE
+	    ,CONTENTS
+	    ,NAME
+	    ,ST_DT
+	  )
+	  VALUES
+	  (
+	     BOARD_SQ.NEXTVAL
+	    , #{title}
+	    , #{contents}
+	    , #{name}
+	    , SYSDATE
+	  )
+	 </insert>
+	 
+	   <select id="getBoardMaxCnt" resultType="int">
+	 	SELECT 
+			count(*) AS CNT	
+		FROM Q_BOARD 
+	 </select>
+	 
+	 
+	 
+	 <select id="getBoardList" parameterType="com.qman.www.board.BoardVO" resultMap="com.qman.www.board.BoardVO" >
+	 	SELECT * 
+		FROM
+		(
+		  SELECT 
+		  ROWNUM RN ,SB.* 
+		  FROM
+		  (
+		    SELECT     
+		        NO
+		        ,TITLE
+		        ,NAME
+		        ,CASE
+		            WHEN UP_DT IS NULL 
+		            THEN DECODE(TO_CHAR(ST_DT,'YYYY-MM-DD'),TO_CHAR(SYSDATE,'YYYY-MM-DD'),TO_CHAR(ST_DT,'hh24:mm:ss'),TO_CHAR(ST_DT,'YYYY-MM-DD')) 
+		            WHEN UP_DT IS NOT NULL
+		            THEN DECODE(TO_CHAR(UP_DT,'YYYY-MM-DD'),TO_CHAR(SYSDATE,'YYYY-MM-DD'),TO_CHAR(UP_DT,'hh24:mm:ss'),TO_CHAR(UP_DT,'YYYY-MM-DD'))     
+		          END AS UP_DT
+		      FROM Q_BOARD 
+		      ORDER BY TO_NUMBER(NO) DESC
+		    ) SB
+		)
+		WHERE RN BETWEEN #{firstRow} AND #{lastRow}
+ </select>
+</mapper>

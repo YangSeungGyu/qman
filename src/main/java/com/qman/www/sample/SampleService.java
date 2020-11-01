@@ -8,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.gson.JsonObject;
+import com.qman.www.common.code.CommonCode;
+import com.qman.www.common.code.ResultCode;
+
 
 @Service
 public class SampleService {
@@ -36,5 +40,17 @@ public class SampleService {
 		}
 		return autoVo;
 		
+	}
+	
+	
+	public JsonObject sampleService(JsonObject returnObj) {
+		try {
+			
+			ResultCode.setSuccessCode(returnObj);
+		}catch(Exception e) {
+			ResultCode.setResultCode(returnObj,CommonCode.ERROR_OTHER);
+			e.getStackTrace();
+		}
+		return returnObj;
 	}
 }
